@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="My talk about strange JavaScript language features you may not know" name="description">
+    <title>Is it possible to have beer in bottles while coding JavaScript?</title>
+    <link href="stylesheets/screen.css" rel="stylesheet">
+    <script src="javascripts/jquery-1.4.2.min.js"></script>
+    <script src="http://use.typekit.com/nbn2flh.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+        try { Typekit.load(); } catch(e) {}
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class="presentation">
+      <div id="presentation-counter"></div>
+    </div>
+    <div class="slides">
+      <div class="slide title navigation-info">
+        <header>
+          <h1>Is it possible to have beer in bottles while coding JavaScript?</h1>
+        </header>
+      </div>
+      <div class="slide contact"></div>
+      <div class="slide">
+        <header>
+          <h1>beer in bottles?</h1>
+        </header>
+        <section>
+          <pre class="xl">beer in bottles</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>club-mate in bottles?</h1>
+        </header>
+        <section>
+          <pre class="xl">club-mate in bottles</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>milk in bottles?</h1>
+        </header>
+        <section>
+          <pre class="xl">milk in bottles</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Objects (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">var a = {};&#x000A;a[{}] = [{}];&#x000A;a[{}] == [{}];  <span class="false">false</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Objects (2)</h1>
+        </header>
+        <section>
+          <pre class="xl">var a = {};&#x000A;a[{}] = 1;&#x000A;a[{}] == 1;  <span class="true">true</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Comparison (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">[]==[]  <span class="false">false</span></pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Comparison (2)</h1>
+        </header>
+        <section>
+          <pre class="xl">[]==[]&#x000A;==[]==&#x000A;[]==[]  <span class="true">true</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Comparison (3)</h1>
+        </header>
+        <section>
+          <pre class="xl">false == []  <span class="true">true</span></pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Prototypes (1)</h1>
+        </header>
+        <section>
+          <pre>var X = function() {};&#x000A;var y = new X();&#x000A;&#x000A;y.constructor == X; <span class="true">true</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Prototypes (2)</h1>
+        </header>
+        <section>
+          <pre>var X = function() {};&#x000A;var y = new X();&#x000A;&#x000A;X.prototype == y.prototype; <span class="false">false</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Prototypes (3)</h1>
+        </header>
+        <section>
+          <pre>var X = function() {};&#x000A;var y = new X();&#x000A;&#x000A;X.prototype == y.__proto__; <span class="true">true</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Prototypes (4)</h1>
+        </header>
+        <section>
+          <pre>var X = function() {};&#x000A;var y = new X();&#x000A;&#x000A;X.prototype.__proto__ == y.__proto__.__proto__; <span class="true">true</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>~~</h1>
+        </header>
+        <section>
+          <pre class="xl">~~7.5  <span class="result">7</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Numbers & toString (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">3.toString()  <span class="false">parse error</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392">
+            http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Numbers & toString (2)</h1>
+        </header>
+        <section>
+          <pre class="xl">3..toString()  <span class="result">"3"</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392">
+            http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Calculation</h1>
+        </header>
+        <section>
+          <pre class="xl">'5' + 3  <span class="result">'53'</span>&#x000A;'5' - 3  <span class="result">2</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392">
+            http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>; (1)</h1>
+        </header>
+        <section>
+          <pre>return&#x000A;{&#x000A;    id : 1234,&#x000A;    title : 'Tony the Pony'&#x000A;};  <span class="false">parse error</span>&#x000A;&#x000A;return {&#x000A;    id : 1234,&#x000A;    title : 'Tony the Pony'&#x000A;};  <span class="result">{ ... }</span>&#x000A;&#x000A;return /*&#x000A;*/{&#x000A;  id : 1234,&#x000A;  title : 'Tony the Pony'&#x000A;};  <span class="result">{ ... }</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392">
+            http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+          </a>
+        </footer>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>; (2)</h1>
+        </header>
+        <section>
+          <p>
+            Do we need a semicolon at the end?
+          </p>
+          <pre>var myFunction = function() {&#x000A;  // ...&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>; (3)</h1>
+        </header>
+        <section>
+          <p>
+            Yes, if the next line starts with brackets:
+          </p>
+          <pre>var myFunction = function() {&#x000A;  // ...&#x000A;} // insert semicolon here&#x000A;(function () {&#x000A;  // ...&#x000A;})();</pre>
+        </section>
+        <footer>
+          <a href="http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript">
+            http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Array length</h1>
+        </header>
+        <section>
+          <pre>var simpsons = ['Homer', 'Marge', 'Bart'];&#x000A;simpsons[42] = 'Dr. Frink';&#x000A;simpsons.length = ?  <span class="result">43</span>&#x000A;&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>What’s the truth? (1)</h1>
+        </header>
+        <section>
+          <pre class="l">''        == '0'           <span class="false">false</span>&#x000A;0         == ''            <span class="true">true</span>&#x000A;0         == '0'           <span class="true">true</span>&#x000A;false     == 'false'       <span class="false">false</span>&#x000A;false     == '0'           <span class="true">true</span>&#x000A;false     == undefined     <span class="false">false</span>&#x000A;false     == null          <span class="false">false</span>&#x000A;null      == undefined     <span class="true">true</span>&#x000A;" \t\r\n" == 0             <span class="true">true</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#1998224">
+            http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#1998224
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>What’s the truth? (2)</h1>
+        </header>
+        <section>
+          <pre class="l">[[2]] ==    2   <span class="true">true</span>&#x000A; [2]  ==   "2"  <span class="true">true</span>&#x000A;+[2]  == -"-2"  <span class="true">true</span>&#x000A;-[2]  == -"+2"  <span class="true">true</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript">
+            http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+          </a>
+        </footer>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Awesome functions</h1>
+        </header>
+        <section>
+          <pre class="xl">o_O()&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Parsing</h1>
+        </header>
+        <section>
+          <pre class="l">parseInt('01')  <span class="result">1</span>&#x000A;parseInt('02')  <span class="result">2</span>&#x000A;parseInt('03')  <span class="result">3</span>&#x000A;parseInt('04')  <span class="result">4</span>&#x000A;parseInt('05')  <span class="result">5</span>&#x000A;parseInt('06')  <span class="result">6</span>&#x000A;parseInt('07')  <span class="result">7</span>&#x000A;parseInt('08')  <span class="false">0</span>&#x000A;parseInt('09')  <span class="false">0</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/850341/workarounds-for-javascript-parseint-octal-bug">
+            http://stackoverflow.com/questions/850341/workarounds-for-javascript-parseint-octal-bug
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>false (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">if (false) {&#x000A;  &#x000A;  alert("Hello World!");&#x000A;  <span class="false">won’t be executed</span>&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>false (2)</h1>
+        </header>
+        <section>
+          <pre class="xl">[0] == false  <span class="true">true</span></pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript">
+            http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>false (3)</h1>
+        </header>
+        <section>
+          <pre class="xl">if ([0]) {&#x000A;  &#x000A;  alert("Hello World!");&#x000A;  <span class="true">will be executed</span>&#x000A;}</pre>
+        </section>
+        <footer>
+          <a href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript">
+            http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>Valid syntax?</h1>
+        </header>
+        <section>
+          <pre class="l">1 + + 1              <span class="result">2</span>&#x000A;1 + - + 1            <span class="result">0</span>&#x000A;1 + - + - + 1        <span class="result">2</span>&#x000A;1 + - + - + - + 1    <span class="result">0</span>&#x000A;1 + - + + + - + 1    <span class="result">2</span>&#x000A;1 + / + + + / + 1    <span class="result">1/ + + + /1</span>&#x000A;1 + / + / + / + 1    <span class="false">parse error</span></pre>
+        </section>
+        <footer>
+          <a href="http://mir.aculo.us/2010/05/28/valid-javascript-or-not/">
+            http://mir.aculo.us/2010/05/28/valid-javascript-or-not/
+          </a>
+        </footer>
+      </div>
+      <div class="slide with-steps">
+        <header>
+          <h1>typeof</h1>
+        </header>
+        <section>
+          <pre class="xl">typeof 1   == ?  <span class="result">"number"</span>&#x000A;&#x000A;typeof "2" == ?  <span class="result">"string"</span>&#x000A;&#x000A;typeof NaN == ?  <span class="result">"number"</span>&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide title-only">
+        <header>
+          <h1 class="light">
+            If
+            <br>
+            <strong>not a number</strong>
+            <br>
+            is
+            <br>
+            <strong>a number</strong>
+            <br>
+            you had too much
+            <br>
+            beer in bottles.
+          </h1>
+        </header>
+      </div>
+      <div class="slide title-only">
+        <header>
+          <h1>Or you’re coding JavaScript.</h1>
+        </header>
+      </div>
+      <div class="slide thanks">
+        <header>
+          <h1>Thank you.</h1>
+        </header>
+        <footer>
+          (and thanks to <a href="http://slides.html5rocks.com/">slides.html5rocks.com</a> where I “borrowed” some code for this presentation under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 Licence</a> and all those sites mentioned on the previous pages)
+        </footer>
+      </div>
+      <div class="slide contact"></div>
+      <script type="text/javascript">
+        //<![CDATA[
+          var beer = 'beer', milk = 'milk', club, mate;
+          var bottles = { beer: 0.33, wine: 1.0, 'club-mate': 0.5, NaN: NaN };
+          
+          var simpsons = ['Homer', 'Marge', 'Bart'];
+          simpsons[42] = 'Dr. Frink';
+        //]]>
+      </script>
+    </div>
+    <script src="javascripts/slideshow.js"></script>
+    <script src="javascripts/hagenburger.js"></script>
+  </body>
+</html>

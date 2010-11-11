@@ -1,0 +1,44 @@
+h1 {
+  color: $blue;
+  font-size: 75px;
+  line-height: 1.1em;
+  margin: 40px;
+  text-align: center;
+  &.light {
+    font-weight: 100;
+  }
+}
+
+h2 {
+  @extend h1;
+  @extend h1.light;
+  font-size: 60px;
+}
+
+p {
+  font-size: 36px;
+  margin: 40px 80px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+body {
+    font-family: ff-dagny-web-pro-1, ff-dagny-web-pro-2, "Dagny Offc", 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.cross {
+  margin: 0 -.15em;
+}
+
+.unit {
+  margin-left: -.15em;
+}
+
+ul,
+ol {
+  li {
+    @extend p;
+  }
+}

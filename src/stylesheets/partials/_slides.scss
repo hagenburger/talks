@@ -1,0 +1,146 @@
+.slides {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out;
+  -o-transition: -o-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: $slide-width;
+  height: $slide-height;
+  left: 50%;
+  top: 50%;
+  margin-top: -350px;
+  background: image-url("layout/white.png");
+  @include transition(margin, 0.25s, ease-in-out);
+  // No box-shadow because of performance issues in Chrome :(
+  // @include box-shadow(rgba(black, .3), 0, 5px, 30px);
+  &.far-past {
+    display: block;
+    margin-left: -2400px;
+  }
+  &.past {
+    visibility: visible;
+    display: block;
+    margin-left: -1400px;
+  }
+  &.current {
+    visibility: visible;
+    display: block;
+    margin-left: -450px;
+  }
+  &.future {
+    visibility: visible;
+    display: block;
+    margin-left: 500px;
+  }
+  &.far-future {
+    display: block;
+    margin-left: 1500px;
+  }
+  .counter {
+    display: none;
+  }
+  &:after {
+    background: rgba(black, .7);
+    bottom: 80px;
+    color: white;
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    left: 80px;
+    opacity: 0;
+    padding: 40px;
+    position: absolute;
+    right: 80px;
+    text-align: center;
+    @include border-radius(15px);
+    @include transition(opacity, 1s);
+  }
+}
+
+footer {
+  bottom: 40px;
+  left: 40px;
+  position: absolute;
+  right: 40px;
+  text-align: center;
+  a {
+    color: darken($background-color, 30%);
+  }
+}
+
+.title-only {
+  background: image-url("layout/green.png");
+  header {
+    display: table-cell;
+    height: $slide-height;
+    vertical-align: middle;
+    width: $slide-width;
+  }
+  h1, footer, footer a {
+    color: white;
+  }
+  footer a {
+    //text-decoration: underline;
+  }
+}
+
+.answer {
+  @extend .title-only;
+}
+
+.question {
+  @extend .title-only;
+  background: image-url("layout/pink.png");
+}
+
+.thanks {
+  @extend .question;
+}
+
+.title {
+  background: image-url("layout/title.png");
+  padding: 350px 20px 0;
+  @include box-sizing(border-box);
+  header {
+    display: table-cell;
+    height: 330px;
+    vertical-align: middle;
+    width: 860px;
+  }
+  h1, h2, footer {
+    color: white;
+    margin: 20px 40px;
+  }
+}
+
+.contact {
+  background: image-url("layout/contact.png");
+}
+
+.with-steps {
+  &:after {
+    content: "Press “N” to show results";
+    opacity: 1;
+    .playing & {
+      opacity: 0;
+    }
+  }
+}
+
+.navigation-info {
+  @extend .with-steps;
+  &:after {
+    content: "Press arrows to navigate";
+  }
+}

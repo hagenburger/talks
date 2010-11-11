@@ -1,0 +1,43 @@
+### OS
+.DS_Store
+Thumbs.db
+
+
+### TEXTMATE
+*.tmproj
+tmtags
+
+
+### LOGS
+*.log
+
+
+### EMACS
+*~
+\#*
+.\#*
+
+
+### VIM
+*.swp
+
+
+### CACHES
+.sass-cache
+*.cache
+*.sprite_info.yml
+
+
+### TMP
+tmp
+
+
+### BUNDLER
+.bundle
+
+
+### RVM
+.rvmrc
+
+
+### PROJECT

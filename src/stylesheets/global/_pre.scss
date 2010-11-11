@@ -1,0 +1,34 @@
+pre {
+  background: darken($background-color, 60%);
+  color: white;
+  font-family: "Courier New";
+  font-size: 24px;
+  font-weight: bold;
+  margin: 40px;
+  overflow: hidden;
+  padding: 20px 40px;
+  &.l {
+    font-size: 30px;
+  }
+  &.xl {
+    font-size: 36px;
+  }
+}
+
+.result {
+  color: $blue;
+  display: none;
+  &:before {
+    content: "=> ";
+  }
+}
+
+.true {
+  @extend .result;
+  color: $green;
+}
+
+.false {
+  @extend .result;
+  color: $pink;
+}

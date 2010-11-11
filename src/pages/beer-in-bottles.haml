@@ -1,0 +1,388 @@
+- @title = 'Is it possible to have beer in bottles while coding JavaScript?'
+- @description = 'My talk about strange JavaScript language features you may not know'
+
+.slide.title.navigation-info
+  %header
+    %h1 Is it possible to have beer in bottles while coding JavaScript?
+
+.slide.contact
+
+.slide
+  %header
+    %h1 beer in bottles?
+  %section
+    %pre.xl
+      beer in bottles
+
+.slide
+  %header
+    %h1 club-mate in bottles?
+  %section
+    %pre.xl
+      club-mate in bottles
+
+.slide
+  %header
+    %h1 milk in bottles?
+  %section
+    %pre.xl
+      milk in bottles
+
+.slide.with-steps
+  %header
+    %h1 Objects (1)
+  %section
+    %pre.xl
+      :preserve
+        var a = {};
+        a[{}] = [{}];
+        a[{}] == [{}];  <span class="false">false</span>
+
+.slide.with-steps
+  %header
+    %h1 Objects (2)
+  %section
+    %pre.xl
+      :preserve
+        var a = {};
+        a[{}] = 1;
+        a[{}] == 1;  <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 Comparison (1)
+  %section
+    %pre.xl
+      []==[]  <span class="false">false</span>
+
+.slide.with-steps
+  %header
+    %h1 Comparison (2)
+  %section
+    %pre.xl
+      :preserve
+        []==[]
+        ==[]==
+        []==[]  <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 Comparison (3)
+  %section
+    %pre.xl
+      false == []  <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 Prototypes (1)
+  %section
+    %pre
+      :preserve
+        var X = function() {};
+        var y = new X();
+        
+        y.constructor == X; <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 Prototypes (2)
+  %section
+    %pre
+      :preserve
+        var X = function() {};
+        var y = new X();
+        
+        X.prototype == y.prototype; <span class="false">false</span>
+
+.slide.with-steps
+  %header
+    %h1 Prototypes (3)
+  %section
+    %pre
+      :preserve
+        var X = function() {};
+        var y = new X();
+        
+        X.prototype == y.__proto__; <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 Prototypes (4)
+  %section
+    %pre
+      :preserve
+        var X = function() {};
+        var y = new X();
+        
+        X.prototype.__proto__ == y.__proto__.__proto__; <span class="true">true</span>
+
+.slide.with-steps
+  %header
+    %h1 ~~
+  %section
+    %pre.xl
+      :preserve
+        ~~7.5  <span class="result">7</span>
+
+.slide.with-steps
+  %header
+    %h1 Numbers & toString (1)
+  %section
+    %pre.xl
+      :preserve
+        3.toString()  <span class="false">parse error</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392")
+      http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+
+.slide.with-steps
+  %header
+    %h1 Numbers & toString (2)
+  %section
+    %pre.xl
+      :preserve
+        3..toString()  <span class="result">"3"</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392")
+      http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+
+.slide.with-steps
+  %header
+    %h1 Calculation
+  %section
+    %pre.xl
+      :preserve
+        '5' + 3  <span class="result">'53'</span>
+        '5' - 3  <span class="result">2</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392")
+      http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+
+.slide.with-steps
+  %header
+    %h1 ; (1)
+  %section
+    %pre
+      :preserve
+        return
+        {
+            id : 1234,
+            title : 'Tony the Pony'
+        };  <span class="false">parse error</span>
+        
+        return {
+            id : 1234,
+            title : 'Tony the Pony'
+        };  <span class="result">{ ... }</span>
+        
+        return /*
+        */{
+          id : 1234,
+          title : 'Tony the Pony'
+        };  <span class="result">{ ... }</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392")
+      http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#3297392
+
+.slide
+  %header
+    %h1 ; (2)
+  %section
+    %p
+      Do we need a semicolon at the end?
+    %pre
+      :preserve
+        var myFunction = function() {
+          // ...
+        }
+
+.slide
+  %header
+    %h1 ; (3)
+  %section
+    %p
+      Yes, if the next line starts with brackets:
+    %pre
+      :preserve
+        var myFunction = function() {
+          // ...
+        } // insert semicolon here
+        (function () {
+          // ...
+        })();
+  %footer
+    %a(href="http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript")
+      http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript
+
+.slide.with-steps
+  %header
+    %h1 Array length
+  %section
+    %pre
+      :preserve
+        var simpsons = ['Homer', 'Marge', 'Bart'];
+        simpsons[42] = 'Dr. Frink';
+        simpsons.length = ?  <span class="result">43</span>
+      
+
+.slide.with-steps
+  %header
+    %h1 What’s the truth? (1)
+  %section
+    %pre.l
+      :preserve
+        ''        == '0'           <span class="false">false</span>
+        0         == ''            <span class="true">true</span>
+        0         == '0'           <span class="true">true</span>
+        false     == 'false'       <span class="false">false</span>
+        false     == '0'           <span class="true">true</span>
+        false     == undefined     <span class="false">false</span>
+        false     == null          <span class="false">false</span>
+        null      == undefined     <span class="true">true</span>
+        " \t\r\n" == 0             <span class="true">true</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#1998224")
+      http://stackoverflow.com/questions/1995113/strangest-language-feature/3297392#1998224
+        
+.slide.with-steps
+  %header
+    %h1 What’s the truth? (2)
+  %section
+    %pre.l
+      :preserve
+        [[2]] ==    2   <span class="true">true</span>
+         [2]  ==   "2"  <span class="true">true</span>
+        +[2]  == -"-2"  <span class="true">true</span>
+        -[2]  == -"+2"  <span class="true">true</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript")
+      http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+
+.slide
+  %header
+    %h1 Awesome functions
+  %section
+    %pre.xl
+      :preserve
+        o_O()
+
+.slide.with-steps
+  %header
+    %h1 Parsing
+  %section
+    %pre.l
+      :preserve
+        parseInt('01')  <span class="result">1</span>
+        parseInt('02')  <span class="result">2</span>
+        parseInt('03')  <span class="result">3</span>
+        parseInt('04')  <span class="result">4</span>
+        parseInt('05')  <span class="result">5</span>
+        parseInt('06')  <span class="result">6</span>
+        parseInt('07')  <span class="result">7</span>
+        parseInt('08')  <span class="false">0</span>
+        parseInt('09')  <span class="false">0</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/850341/workarounds-for-javascript-parseint-octal-bug")
+      http://stackoverflow.com/questions/850341/workarounds-for-javascript-parseint-octal-bug
+
+.slide.with-steps
+  %header
+    %h1 false (1)
+  %section
+    %pre.xl
+      :preserve
+        if (false) {
+          
+          alert("Hello World!");
+          <span class="false">won’t be executed</span>
+        }
+
+.slide.with-steps
+  %header
+    %h1 false (2)
+  %section
+    %pre.xl
+      :preserve
+        [0] == false  <span class="true">true</span>
+  %footer
+    %a(href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript")
+      http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+
+.slide.with-steps
+  %header
+    %h1 false (3)
+  %section
+    %pre.xl
+      :preserve
+        if ([0]) {
+          
+          alert("Hello World!");
+          <span class="true">will be executed</span>
+        }
+  %footer
+    %a(href="http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript")
+      http://stackoverflow.com/questions/1724255/why-does-2-2-in-javascript
+
+.slide.with-steps
+  %header
+    %h1 Valid syntax?
+  %section
+    %pre.l
+      :preserve
+        1 + + 1              <span class="result">2</span>
+        1 + - + 1            <span class="result">0</span>
+        1 + - + - + 1        <span class="result">2</span>
+        1 + - + - + - + 1    <span class="result">0</span>
+        1 + - + + + - + 1    <span class="result">2</span>
+        1 + / + + + / + 1    <span class="result">1/ + + + /1</span>
+        1 + / + / + / + 1    <span class="false">parse error</span>
+  %footer
+    %a(href="http://mir.aculo.us/2010/05/28/valid-javascript-or-not/")
+      http://mir.aculo.us/2010/05/28/valid-javascript-or-not/
+
+.slide.with-steps
+  %header
+    %h1 typeof
+  %section
+    %pre.xl
+      :preserve
+        typeof 1   == ?  <span class="result">"number"</span>
+        
+        typeof "2" == ?  <span class="result">"string"</span>
+        
+        typeof NaN == ?  <span class="result">"number"</span>
+
+.slide.title-only
+  %header
+    %h1.light
+      If
+      %br
+      %strong not a number
+      %br
+      is
+      %br
+      %strong a number
+      %br
+      you had too much
+      %br
+      beer in bottles.
+
+.slide.title-only
+  %header
+    %h1 Or you’re coding JavaScript.
+
+.slide.thanks
+  %header
+    %h1 Thank you.
+  %footer
+    (and thanks to #{link "slides.html5rocks.com", "http://slides.html5rocks.com/"} where I “borrowed” some code for this presentation under #{link "Apache 2.0 Licence", "http://www.apache.org/licenses/LICENSE-2.0"} and all those sites mentioned on the previous pages)
+
+.slide.contact
+        
+:javascript
+  var beer = 'beer', milk = 'milk', club, mate;
+  var bottles = { beer: 0.33, wine: 1.0, 'club-mate': 0.5, NaN: NaN };
+  
+  var simpsons = ['Homer', 'Marge', 'Bart'];
+  simpsons[42] = 'Dr. Frink';
+  

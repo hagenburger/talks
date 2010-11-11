@@ -1,0 +1,28 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  font-size: 16px;
+  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  left: 0px;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+.presentation {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  display: block;
+  overflow: hidden;
+  background: darken($background-color, 50%);
+}
+

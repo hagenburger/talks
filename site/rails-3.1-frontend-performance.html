@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta content="Frontend improvements in Rails 3.1 including flushing, Sass/SCSS, Compass and CSS sprites/Lemonade." name="description">
+    <title>Rails 3.1 – A Sneak Preview</title>
+    <link href="stylesheets/screen.css" rel="stylesheet">
+    <script src="javascripts/jquery-1.4.2.min.js"></script>
+    <script src="http://use.typekit.com/nbn2flh.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+        try { Typekit.load(); } catch(e) {}
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div class="presentation">
+      <div id="presentation-counter"></div>
+    </div>
+    <div class="slides">
+      <div class="slide title navigation-info">
+        <header>
+          <h1>Rails 3.1</h1>
+          <h2>A Sneak Preview</h2>
+        </header>
+      </div>
+      <div class="slide contact"></div>
+      <div class="slide answer">
+        <header>
+          <h1>Flushing</h1>
+        </header>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Flushing</h1>
+        </header>
+        <section>
+          <figure>
+            <img alt="Flush" src="images/rails-3.1/flush.003.png">
+          </figure>
+        </section>
+        <footer>
+          <a href="http://yehudakatz.com/2010/09/07/automatic-flushing-the-rails-3-1-plan/">
+            http://yehudakatz.com/2010/09/07/automatic-flushing-the-rails-3-1-plan/
+          </a>
+        </footer>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>CoffeeScript</h1>
+        </header>
+        <footer>
+          <a href="http://blog.danielfischer.com/2010/09/20/gogaruco-2010-recap/">
+            http://blog.danielfischer.com/2010/09/20/gogaruco-2010-recap/
+          </a>
+        </footer>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>CoffeeScript</h1>
+        </header>
+        <section>
+          <pre class="l">number   = 42&#x000A;&#x000A;number = -42 if opposite&#x000A;&#x000A;square = (x) -> x * x&#x000A;&#x000A;list = [1, 2, 3, 4, 5]&#x000A;&#x000A;math =&#x000A;  root:   Math.sqrt&#x000A;  square: square&#x000A;  cube:   (x) -> x * square x</pre>
+        </section>
+        <footer>
+          <a href="http://jashkenas.github.com/coffee-script/">
+            http://jashkenas.github.com/coffee-script/
+          </a>
+        </footer>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>SCSS</h1>
+        </header>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Variables</h1>
+        </header>
+        <section>
+          <pre class="l">$my-color: #ab42ef;&#x000A;&#x000A;body {&#x000A;  background: $my-color;&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Mixins</h1>
+        </header>
+        <section>
+          <pre class="l">@mixin my-style {&#x000A;  background: red;&#x000A;}&#x000A;&#x000A;.my-box {&#x000A;  @include my-style;&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>Default in Rails 3.1</h1>
+          <h2>More details in my next talk</h2>
+        </header>
+      </div>
+      <div class="slide question">
+        <header>
+          <h1>Is Google fast?</h1>
+        </header>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>Yes it is.</h1>
+        </header>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Why?</h1>
+        </header>
+        <section>
+          <figure class="shadow">
+            <img alt="Google sprites" src="images/rails-3.1/google-sprites.png">
+            <figcaption>
+              <a href="http://www.google.de/images/srpr/nav_logo14.png">
+                http://www.google.de/images/srpr/nav_logo14.png
+              </a>
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Sprites (1)</h1>
+        </header>
+        <section>
+          <ul>
+            <li>1 image</li>
+            <li>1 HTTP request</li>
+            <li>small file size</li>
+          </ul>
+          <p>=> very fast</p>
+        </section>
+      </div>
+      <div class="slide question">
+        <header>
+          <h1>How to create your own Sprite?</h1>
+        </header>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Buy Photoshop</h1>
+        </header>
+        <section>
+          <figure>
+            <img alt="Photoshop" src="images/rails-3.1/photoshop.png">
+            <figcaption>
+              1,010.31 € anyone?
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>
+            Or use Compass
+            <br>
+            (soon)
+          </h1>
+        </header>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Sprites (1)</h1>
+        </header>
+        <section>
+          <figure>
+            <img alt="Sprite folder" src="images/rails-3.1/sprite-folder.png">
+            <figcaption>
+              Two images with 10 x 10 px and 20 x 20 px size.
+            </figcaption>
+          </figure>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Sprites (2)</h1>
+        </header>
+        <section>
+          <pre class="xl">@import "squares/*.png";&#x000A;@include all-squares-sprites;&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Sprites (3)</h1>
+        </header>
+        <section>
+          <pre>.squares-sprite, .squares-10x10, .squares-20x20 {&#x000A;  background: url('/squares.png') no-repeat;&#x000A;}&#x000A;&#x000A;.squares-10x10 {&#x000A;  background-position: 0 0;&#x000A;}&#x000A;&#x000A;.squares-20x20 {&#x000A;  background-position: 0 -10px;&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Dimensions (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">$squares-sprite-dimensions: true;&#x000A;@import "squares/*.png";&#x000A;@include all-squares-sprites;&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Dimensions (2)</h1>
+        </header>
+        <section>
+          <pre>.squares-sprite, .squares-10x10, .squares-20x20 {&#x000A;  background: url('/squares.png') no-repeat;&#x000A;}&#x000A;&#x000A;.squares-10x10 {&#x000A;  background-position: 0 0;&#x000A;  height: 10px;&#x000A;  width: 10px;&#x000A;}&#x000A;&#x000A;.squares-20x20 {&#x000A;  background-position: 0 -10px;&#x000A;  height: 20px;&#x000A;  width: 20px;&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Spacing (1)</h1>
+        </header>
+        <section>
+          <pre class="xl">$squares-10x10-spacing: 33px;&#x000A;@import "squares/*.png";&#x000A;@include all-squares-sprites;&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide">
+        <header>
+          <h1>Spacing (2)</h1>
+        </header>
+        <section>
+          <pre>.squares-sprite, .squares-10x10, .squares-20x20 {&#x000A;  background: url('/squares.png') no-repeat;&#x000A;}&#x000A;&#x000A;.squares-10x10 {&#x000A;  background-position: 0 0;&#x000A;}&#x000A;&#x000A;.squares-20x20 {&#x000A;  background-position: 0 -43px;&#x000A;}&#x000A;</pre>
+        </section>
+      </div>
+      <div class="slide question">
+        <header>
+          <h1>Can I use it now?</h1>
+        </header>
+      </div>
+      <div class="slide answer">
+        <header>
+          <h1>Yes. Use lemonade.</h1>
+        </header>
+        <footer>
+          <a href="http://github.com/hagenburger/lemonade">
+            http://github.com/hagenburger/lemonade
+          </a>
+          <br>
+          <a href="http://www.hagenburger.net/BLOG/Lemonade-CSS-Sprites-for-Sass-Compass.html">
+            http://www.hagenburger.net/BLOG/Lemonade-CSS-Sprites-for-Sass-Compass.html
+          </a>
+        </footer>
+      </div>
+      <div class="slide contact"></div>
+    </div>
+    <script src="javascripts/slideshow.js"></script>
+    <script src="javascripts/hagenburger.js"></script>
+  </body>
+</html>

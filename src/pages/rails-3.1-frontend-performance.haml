@@ -1,0 +1,250 @@
+- @title = 'Rails 3.1 – A Sneak Preview'
+- @description = 'Frontend improvements in Rails 3.1 including flushing, Sass/SCSS, Compass and CSS sprites/Lemonade.'
+
+.slide.title.navigation-info
+  %header
+    %h1 Rails 3.1
+    %h2 A Sneak Preview
+
+.slide.contact
+
+.slide.answer
+  %header
+    %h1 Flushing
+
+.slide
+  %header
+    %h1 Flushing
+  %section
+    %figure
+      = img "rails-3.1/flush.003.png"
+  %footer
+    %a(href="http://yehudakatz.com/2010/09/07/automatic-flushing-the-rails-3-1-plan/")
+      http://yehudakatz.com/2010/09/07/automatic-flushing-the-rails-3-1-plan/
+
+.slide.answer
+  %header
+    %h1 CoffeeScript
+  %footer
+    %a(href="http://blog.danielfischer.com/2010/09/20/gogaruco-2010-recap/")
+      http://blog.danielfischer.com/2010/09/20/gogaruco-2010-recap/
+
+.slide
+  %header
+    %h1 CoffeeScript
+  %section
+    %pre.l
+      :preserve
+        number   = 42
+        
+        number = -42 if opposite
+        
+        square = (x) -> x * x
+        
+        list = [1, 2, 3, 4, 5]
+        
+        math =
+          root:   Math.sqrt
+          square: square
+          cube:   (x) -> x * square x
+  %footer
+    %a(href="http://jashkenas.github.com/coffee-script/")
+      http://jashkenas.github.com/coffee-script/
+
+.slide.answer
+  %header
+    %h1 SCSS
+
+.slide
+  %header
+    %h1 Variables
+  %section
+    %pre.l
+      :preserve
+        $my-color: #ab42ef;
+
+        body {
+          background: $my-color;
+        }
+
+.slide
+  %header
+    %h1 Mixins
+  %section
+    %pre.l
+      :preserve
+        @mixin my-style {
+          background: red;
+        }
+
+        .my-box {
+          @include my-style;
+        }
+
+.slide.answer
+  %header
+    %h1 Default in Rails 3.1
+    %h2 More details in my next talk
+
+.slide.question
+  %header
+    %h1 Is Google fast?
+
+.slide.answer
+  %header
+    %h1 Yes it is.
+
+.slide
+  %header
+    %h1 Why?
+  %section
+    %figure.shadow
+      = img "rails-3.1/google-sprites.png"
+      %figcaption
+        %a(href="http://www.google.de/images/srpr/nav_logo14.png")
+          http://www.google.de/images/srpr/nav_logo14.png
+
+.slide
+  %header
+    %h1 Sprites (1)
+  %section
+    %ul
+      %li 1 image
+      %li 1 HTTP request
+      %li small file size
+    %p => very fast
+
+.slide.question
+  %header
+    %h1 How to create your own Sprite?
+
+.slide
+  %header
+    %h1 Buy Photoshop
+  %section
+    %figure
+      = img "rails-3.1/photoshop.png"
+      %figcaption
+        -#{dimension "1,010.31", "€"} anyone?
+        1,010.31 € anyone?
+
+.slide.answer
+  %header
+    %h1
+      Or use Compass
+      %br
+      (soon)
+
+.slide
+  %header
+    %h1 Sprites (1)
+  %section
+    %figure
+      = img "rails-3.1/sprite-folder.png"
+      %figcaption
+        -#Two images with #{dimensions(10, 10, "px")} and #{dimensions(20, 20, "px")} size.
+        Two images with 10 x 10 px and 20 x 20 px size.
+
+.slide
+  %header
+    %h1 Sprites (2)
+  %section
+    %pre.xl
+      :preserve
+        @import "squares/*.png";
+        @include all-squares-sprites;
+
+.slide
+  %header
+    %h1 Sprites (3)
+  %section
+    %pre
+      :preserve
+        .squares-sprite, .squares-10x10, .squares-20x20 {
+          background: url('/squares.png') no-repeat;
+        }
+
+        .squares-10x10 {
+          background-position: 0 0;
+        }
+
+        .squares-20x20 {
+          background-position: 0 -10px;
+        }
+
+.slide
+  %header
+    %h1 Dimensions (1)
+  %section
+    %pre.xl
+      :preserve
+        $squares-sprite-dimensions: true;
+        @import "squares/*.png";
+        @include all-squares-sprites;
+
+.slide
+  %header
+    %h1 Dimensions (2)
+  %section
+    %pre
+      :preserve
+        .squares-sprite, .squares-10x10, .squares-20x20 {
+          background: url('/squares.png') no-repeat;
+        }
+
+        .squares-10x10 {
+          background-position: 0 0;
+          height: 10px;
+          width: 10px;
+        }
+
+        .squares-20x20 {
+          background-position: 0 -10px;
+          height: 20px;
+          width: 20px;
+        }
+
+.slide
+  %header
+    %h1 Spacing (1)
+  %section
+    %pre.xl
+      :preserve
+        $squares-10x10-spacing: 33px;
+        @import "squares/*.png";
+        @include all-squares-sprites;
+
+.slide
+  %header
+    %h1 Spacing (2)
+  %section
+    %pre
+      :preserve
+        .squares-sprite, .squares-10x10, .squares-20x20 {
+          background: url('/squares.png') no-repeat;
+        }
+
+        .squares-10x10 {
+          background-position: 0 0;
+        }
+
+        .squares-20x20 {
+          background-position: 0 -43px;
+        }
+
+.slide.question
+  %header
+    %h1 Can I use it now?
+
+.slide.answer
+  %header
+    %h1 Yes. Use lemonade.
+  %footer
+    %a(href="http://github.com/hagenburger/lemonade")
+      http://github.com/hagenburger/lemonade
+    %br
+    %a(href="http://www.hagenburger.net/BLOG/Lemonade-CSS-Sprites-for-Sass-Compass.html")
+      http://www.hagenburger.net/BLOG/Lemonade-CSS-Sprites-for-Sass-Compass.html  
+
+.slide.contact
+        

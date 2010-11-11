@@ -1,0 +1,20 @@
+figure {
+  display: table-cell;
+  height: 470px;
+  text-align: center;
+  vertical-align: middle;
+  width: $slide-width;
+  img {
+    max-height: 470px;
+  }
+  &.shadow img {
+    @include box-shadow(rgba(black, .5), 0, 3px, 15px);
+  }
+  &.transparent img {
+    background: image-url("layout/transparency.png");
+  }
+}
+
+figcaption {
+  @extend footer;
+}

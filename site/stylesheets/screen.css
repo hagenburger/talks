@@ -1,0 +1,337 @@
+/* line 1, ./src/stylesheets/global/_typography.scss */
+h1, h2 {
+  color: #6cb8bb;
+  font-size: 75px;
+  line-height: 1.1em;
+  margin: 40px;
+  text-align: center;
+}
+/* line 7, ./src/stylesheets/global/_typography.scss */
+h1.light, h2.light, h2 {
+  font-weight: 100;
+}
+
+/* line 12, ./src/stylesheets/global/_typography.scss */
+h2 {
+  font-size: 60px;
+}
+
+/* line 18, ./src/stylesheets/global/_typography.scss */
+p, ul li,
+ol li {
+  font-size: 36px;
+  margin: 40px 80px;
+}
+
+/* line 23, ./src/stylesheets/global/_typography.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 27, ./src/stylesheets/global/_typography.scss */
+body {
+  font-family: ff-dagny-web-pro-1, ff-dagny-web-pro-2, "Dagny Offc", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* line 31, ./src/stylesheets/global/_typography.scss */
+.cross {
+  margin: 0 -0.15em;
+}
+
+/* line 35, ./src/stylesheets/global/_typography.scss */
+.unit {
+  margin-left: -0.15em;
+}
+
+/* line 1, ./src/stylesheets/global/_pre.scss */
+pre {
+  background: #3f4a48;
+  color: white;
+  font-family: "Courier New";
+  font-size: 24px;
+  font-weight: bold;
+  margin: 40px;
+  overflow: hidden;
+  padding: 20px 40px;
+}
+/* line 10, ./src/stylesheets/global/_pre.scss */
+pre.l {
+  font-size: 30px;
+}
+/* line 13, ./src/stylesheets/global/_pre.scss */
+pre.xl {
+  font-size: 36px;
+}
+
+/* line 18, ./src/stylesheets/global/_pre.scss */
+.result, .true, .false {
+  color: #6cb8bb;
+  display: none;
+}
+/* line 21, ./src/stylesheets/global/_pre.scss */
+.result:before, .true:before, .false:before {
+  content: "=> ";
+}
+
+/* line 26, ./src/stylesheets/global/_pre.scss */
+.true {
+  color: #7dc322;
+}
+
+/* line 31, ./src/stylesheets/global/_pre.scss */
+.false {
+  color: #c322bd;
+}
+
+/* line 1, ./src/stylesheets/global/_links.scss */
+a {
+  color: #23c36b;
+  text-decoration: none;
+}
+/* line 4, /Users/nh/.rvm/gems/ruby-1.9.2-rc2@talks/gems/compass-0.10.5/frameworks/compass/stylesheets/./compass/utilities/links/_hover-link.scss */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 1, ./src/stylesheets/layouts/_default.scss */
+html {
+  overflow: hidden;
+}
+
+/* line 5, ./src/stylesheets/layouts/_default.scss */
+body {
+  font-size: 16px;
+  font-family: "ff-dagny-web-pro-1", "ff-dagny-web-pro-2", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  left: 0px;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+/* line 18, ./src/stylesheets/layouts/_default.scss */
+.presentation {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  display: block;
+  overflow: hidden;
+  background: #576562;
+}
+
+/* line 1, ./src/stylesheets/partials/_slides.scss */
+.slides {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  display: block;
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out;
+  -o-transition: -o-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+}
+
+/* line 14, ./src/stylesheets/partials/_slides.scss */
+.slide {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  width: 900px;
+  height: 700px;
+  left: 50%;
+  top: 50%;
+  margin-top: -350px;
+  background: url('../images/layout/white.png?1265268765');
+  -moz-transition-property: margin;
+  -webkit-transition-property: margin;
+  -o-transition-property: margin;
+  transition-property: margin;
+  -moz-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 27, ./src/stylesheets/partials/_slides.scss */
+.slide.far-past {
+  display: block;
+  margin-left: -2400px;
+}
+/* line 31, ./src/stylesheets/partials/_slides.scss */
+.slide.past {
+  visibility: visible;
+  display: block;
+  margin-left: -1400px;
+}
+/* line 36, ./src/stylesheets/partials/_slides.scss */
+.slide.current {
+  visibility: visible;
+  display: block;
+  margin-left: -450px;
+}
+/* line 41, ./src/stylesheets/partials/_slides.scss */
+.slide.future {
+  visibility: visible;
+  display: block;
+  margin-left: 500px;
+}
+/* line 46, ./src/stylesheets/partials/_slides.scss */
+.slide.far-future {
+  display: block;
+  margin-left: 1500px;
+}
+/* line 50, ./src/stylesheets/partials/_slides.scss */
+.slide .counter {
+  display: none;
+}
+/* line 53, ./src/stylesheets/partials/_slides.scss */
+.slide:after {
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 80px;
+  color: white;
+  display: block;
+  font-size: 36px;
+  font-weight: bold;
+  left: 80px;
+  opacity: 0;
+  padding: 40px;
+  position: absolute;
+  right: 80px;
+  text-align: center;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  -moz-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+/* line 71, ./src/stylesheets/partials/_slides.scss */
+footer, figcaption {
+  bottom: 40px;
+  left: 40px;
+  position: absolute;
+  right: 40px;
+  text-align: center;
+}
+/* line 77, ./src/stylesheets/partials/_slides.scss */
+footer a, figcaption a {
+  color: #899996;
+}
+
+/* line 82, ./src/stylesheets/partials/_slides.scss */
+.title-only, .answer, .question, .thanks {
+  background: url('../images/layout/green.png?1265275262');
+}
+/* line 84, ./src/stylesheets/partials/_slides.scss */
+.title-only header, .answer header, .question header, .thanks header {
+  display: table-cell;
+  height: 700px;
+  vertical-align: middle;
+  width: 900px;
+}
+/* line 90, ./src/stylesheets/partials/_slides.scss */
+.title-only h1, .answer h1, .question h1, .thanks h1, .title-only h2, .answer h2, .question h2, .thanks h2, .title-only footer, .answer footer, .question footer, .thanks footer, .title-only figcaption, .answer figcaption, .question figcaption, .thanks figcaption, .title-only footer a, .answer footer a, .question footer a, .thanks footer a, .title-only figcaption a, .answer figcaption a, .question figcaption a, .thanks figcaption a {
+  color: white;
+}
+
+/* line 102, ./src/stylesheets/partials/_slides.scss */
+.question, .thanks {
+  background: url('../images/layout/pink.png?1265277280');
+}
+
+/* line 111, ./src/stylesheets/partials/_slides.scss */
+.title {
+  background: url('../images/layout/title.png?1285195914');
+  padding: 350px 20px 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 115, ./src/stylesheets/partials/_slides.scss */
+.title header {
+  display: table-cell;
+  height: 330px;
+  vertical-align: middle;
+  width: 860px;
+}
+/* line 121, ./src/stylesheets/partials/_slides.scss */
+.title h1, .title h2, .title h2, .title footer, .title figcaption {
+  color: white;
+  margin: 20px 40px;
+}
+
+/* line 127, ./src/stylesheets/partials/_slides.scss */
+.contact {
+  background: url('../images/layout/contact.png?1285195995');
+}
+
+/* line 132, ./src/stylesheets/partials/_slides.scss */
+.with-steps:after, .navigation-info:after {
+  content: "Press “N” to show results";
+  opacity: 1;
+}
+/* line 135, ./src/stylesheets/partials/_slides.scss */
+.playing .with-steps:after, .playing .navigation-info:after {
+  opacity: 0;
+}
+
+/* line 143, ./src/stylesheets/partials/_slides.scss */
+.navigation-info:after {
+  content: "Press arrows to navigate";
+}
+
+/* line 1, ./src/stylesheets/partials/_presentation-counter.scss */
+#presentation-counter {
+  color: #6cb8bb;
+  font-size: 100px;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 1, ./src/stylesheets/partials/_figures.scss */
+figure {
+  display: table-cell;
+  height: 470px;
+  text-align: center;
+  vertical-align: middle;
+  width: 900px;
+}
+/* line 7, ./src/stylesheets/partials/_figures.scss */
+figure img {
+  max-height: 470px;
+}
+/* line 10, ./src/stylesheets/partials/_figures.scss */
+figure.shadow img {
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 15px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 3px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 3px 15px 0;
+}
+/* line 13, ./src/stylesheets/partials/_figures.scss */
+figure.transparent img {
+  background: url('../images/layout/transparency.png?1277968229');
+}
